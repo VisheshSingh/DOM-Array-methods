@@ -50,5 +50,16 @@ function formatCurrency(number) {
   return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
+function doubleMoney() {
+  data = data.map(item => {
+    return { ...item, money: item.money * 2 };
+  });
+
+  updateDOM();
+}
+
 // addUser
 addUserBtn.addEventListener('click', getRandomUser);
+
+// MAP
+doubleBtn.addEventListener('click', doubleMoney);
